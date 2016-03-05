@@ -21,16 +21,16 @@ int removeArrayDuplicates(int *Arr, int len)
 		return -1;
 	int i;
 	int j;
-	int k = 0;
+	int k = 1;
 	for (i = 0; i < len; i++){
 		for (j = k - 1; j != -1; j--){
 			if (Arr[j] == Arr[i])
 				break;
 		}
+	}
 		if (j == -1){
 			Arr[k] = Arr[i];
 			k++;
-		}
 	}
 	return k - 1;
 }
