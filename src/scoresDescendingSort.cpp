@@ -19,8 +19,18 @@ struct student {
 	char name[10];
 	int score;
 };
+void swap(struct student *i, struct student *j){
+	struct student temp = *i;
+	*i = *j;
+	*j = temp;
 
+}
 void * scoresDescendingSort(struct student *students, int len) {
-
-	return NULL;
+	int i;
+	int j;
+	if (len <= 0 || students == NULL)
+		return NULL;
+	for (i = 0, j = len - 1; students[i].score < students[j].score; i++, j--){
+		swap(&students[i], &students[j]);
+	}
 }
